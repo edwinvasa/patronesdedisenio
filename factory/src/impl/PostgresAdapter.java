@@ -37,7 +37,7 @@ public class PostgresAdapter implements IDBAdapter {
             String connectionString = createConnectionString();
             Connection connection = DriverManager.getConnection(connectionString);
             System.out.println("connection class = " + connection.getClass().getName());
-            return null;
+            return connection;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

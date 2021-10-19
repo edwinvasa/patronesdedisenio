@@ -22,7 +22,7 @@ public class ProductDAO {
         Connection connection = dbAdapter.getConnection();
         List<Product> productList = new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT idProduct, name, price FROM productos");
+            PreparedStatement statement = connection.prepareStatement("SELECT idProduct, name, price FROM product");
             ResultSet results = statement.executeQuery();
             while (results.next()) {
                 productList.add(new Product(results.getInt(1),
@@ -46,7 +46,7 @@ public class ProductDAO {
     public boolean saveProduct(Product product) {
         Connection connection = dbAdapter.getConnection();
         try {
-            PreparedStatement statement = connection.prepareStatement("INSET INTO producto(id, name, price)"
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO product(idProduct, name, price)"
                     + " VALUES (?, ?, ?)");
             statement.setInt(1, product.getIdProduct());
             statement.setString(2, product.getName());

@@ -1,3 +1,5 @@
+package db;
+
 import db.IDBAdapter;
 import impl.MySQLAdapter;
 import impl.PostgresAdapter;
